@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@material/web": "^1.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "material-components-web": "^14.0.0",
+    "materialize-css": "^1.0.0-rc.2",
+    "rollup": "^3.29.4"
+  }
+}
