@@ -8,6 +8,13 @@
   'opsz' 48
 }
 
+.tabs .tab a {
+  color: green lighten-4;
+}
+.tabs .tab a.active {
+  color: green lighten-4;
+}
+
 body {
     display: flex;
     min-height: 100vh;
