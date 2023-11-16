@@ -1,3 +1,5 @@
+M.AutoInit();
+
 $(document).ready(function(){
     $('.tabs').tabs();
   });
@@ -11,3 +13,7 @@ $(document).ready(function() {
 $(document).ready(function(){
     $('.tooltipped').tooltip();
 });
+
+$(document).ready(function(){
+    $('.scrollspy').scrollSpy();
+  });
