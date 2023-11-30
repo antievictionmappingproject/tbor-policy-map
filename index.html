@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -33,6 +33,7 @@
   </script>
 
 <body>
+  <div id="app">
   <nav class="blue darken-1" role="navigation">
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo">TBOR</a>
@@ -59,6 +60,11 @@
       <h1 class="header center orange-text text-darken-3">Tenant Bill of Rights Map</h1>
       <div class="row center">
         <h5 class="header col s12 light">During the COVID-19 pandemic, Los Angeles housing organizers, tenant leaders and public interest lawyers formed a coalition called <a target="_blank" href="https://www.keeplahoused.org/">Keep LA Housed</a> to confront the specific challenges the pandemic posed for LA County renters and their communities. What emerged was a holistic policy framework, the Tenant Bill of Rights (TBOR), consisting of nine policies designed to keep tenants housed, protect tenants from harassment, and provide tenants with economic and legal support when they face eviction. This map visualizes how many of the TBOR policies each city in LA County, and the County itself (for unincorporated areas) has enacted, and whether a strong or weak version was adopted.</h5>
+        <p class="header col s12 light"><i> Disclaimer: We intend for this map to be a comparative tool rather than an endorsement 
+        of a particular jurisdiction’s policy. Furthermore, a score of 1 for any 
+        individual policy does not mean that the policy is perfect or cannot be 
+        improved upon.</i></p>
+        <br><br>
       </div>
       <div class="row center">
         <a href="about.html" class="btn-large waves-effect waves-light orange darken-3">About</a>&nbsp;&nbsp;
@@ -69,7 +75,6 @@
     </div>
   </div>
 
-  </div>
   <div class="container row scrollspy">
     <br><br><br>
     <div class="col s12 m4 l3">
@@ -127,7 +132,6 @@
             <li><a href="city/longbeach.html" class="collection-item blue-text text-accent-4">Long Beach</a></li>
             <li><a href="city/losangeles.html" class="collection-item blue-text text-accent-4">Los Angeles</a></li>
             <li><a href="city/lynwood.html" class="collection-item blue-text text-accent-4">Lynwood</a></li>
-            <li><a href="city/lakewood.html" class="collection-item blue-text text-accent-4">Lakewood</a></li>
             <li><a href="city/malibu.html" class="collection-item blue-text text-accent-4">Malibu</a></li>
             <li><a href="city/manhattanbeach.html" class="collection-item blue-text text-accent-4">Manhattan Beach</a></li>
             <li><a href="city/maywood.html" class="collection-item blue-text text-accent-4">Maywood</a></li>
@@ -167,6 +171,7 @@
             <li><a href="city/westhollywood.html" class="collection-item blue-text text-accent-4">West Hollywood</a></li>
             <li><a href="city/westlakevillage.html" class="collection-item blue-text text-accent-4">Westlake Village</a></li>
             <li><a href="city/whittier.html" class="collection-item blue-text text-accent-4">Whittier</a></li>
+          </ul>
       </div>
 
       <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
@@ -202,10 +207,18 @@
         </div>
       </div>
     </footer>
+  </div>
 
 </body>
 </html>
-
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="src/components/MainComponent.vue"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      render: (h) => h(MainComponent),
+    });
+  </script>
 <script type="text/javascript">
 M.AutoInit();
 </script>
