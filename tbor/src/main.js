@@ -11,6 +11,7 @@ import Home from './components/MainComponent.vue';
 import About from './components/AboutComponent.vue';
 import HowTo from './components/HowToComponent.vue';
 import CityPage from './components/CityPage.vue';
+import CartoPage from './components/CartoPage.vue';
 
 // Define your routes
 const routes = [
@@ -18,6 +19,7 @@ const routes = [
   { path: '/about', component: About },
   { path: '/howto', component: HowTo },
   { path: '/city/:id', name: 'city', component: CityPage, props: true },
+  { path: '/carto/:id', name: 'carto', component: CartoPage, props: true },
   // Other routes
 ];
 
