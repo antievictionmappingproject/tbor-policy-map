@@ -3124,12 +3124,12 @@ export const citiesData = [
   {
     id: 61,
     name: 'Pasadena',
-    score: 3.5,
+    score: 4,
     measures: [
       {
         id: 1,
         title: 'Rent Stabilization',
-        score: 0.5,
+        score: 1,
       },
       {
         id: 2,
