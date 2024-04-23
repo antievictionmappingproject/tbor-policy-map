@@ -2500,12 +2500,12 @@ export const citiesData = [
   {
     id: 49,
     name: 'Los Angeles',
-    score: 7,
+    score: 7.5,
     measures: [
       {
         id: 1,
         title: 'Rent Stabilization',
-        score: 0.5,
+        score: 1,
       },
       {
         id: 2,
@@ -3852,12 +3852,12 @@ export const citiesData = [
   {
     id: 75,
     name: 'Santa Monica',
-    score: 4,
+    score: 4.5,
     measures: [
       {
         id: 1,
         title: 'Rent Stabilization',
-        score: 0.5,
+        score: 1,
       },
       {
         id: 2,
