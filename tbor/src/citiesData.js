@@ -1772,12 +1772,12 @@ export const citiesData = [
   {
     id: 35,
     name: 'Huntington Park',
-    score: 0,
+    score: 2,
     measures: [
       {
         id: 1,
         title: 'Rent Stabilization',
-        score: 0,
+        score: 1,
       },
       {
         id: 2,
@@ -1817,7 +1817,7 @@ export const citiesData = [
       {
         id: 10,
         title: 'Universal Just Cause Protections',
-        score: 0,
+        score: 1,
       }
     ]
   },
@@ -2500,7 +2500,7 @@ export const citiesData = [
   {
     id: 49,
     name: 'Los Angeles',
-    score: 7.5,
+    score: 8,
     measures: [
       {
         id: 1,
@@ -2540,7 +2540,7 @@ export const citiesData = [
       {
         id: 9,
         title: 'Codified Right to Counsel',
-        score: 0.5,
+        score: 1,
       },
       {
         id: 10,

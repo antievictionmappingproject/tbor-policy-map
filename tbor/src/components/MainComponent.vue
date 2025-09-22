@@ -25,13 +25,28 @@
   <div class="container row scrollspy">
     <br><br><br>
     <div class="col s12 m4 l3">
-      <div class="collection-header">
-          <h5>City List</h5>
+      <!-- Search input -->
+        <div class="search-box">
+          <i class="material-icons search-icon">search</i>
+          <input
+            type="text"
+            v-model="searchQuery"
+            placeholder="Search cities..."
+          />
+          <button
+            v-if="searchQuery"
+            class="clear-btn"
+            @click="searchQuery = ''"
+            type="button"
+            aria-label="Clear search"
+          >
+            ×
+          </button>
         </div>
       <ul class="collection with-header">
-            <li class="collection-item blue-text text-accent-4" v-for="city in cityData" :key="city.id" @click="goToCityPage(city.id)">
+            <li class="collection-item blue-text text-accent-4" v-for="city in filteredCities" :key="city.id" @click="goToCityPage(city.id)">
             <div>
-              <span class="title"><b>{{ city.name }}</b></span>
+              <span class="title" v-html="city.highlightedName"></span>
               <p class="score">Score: {{ city.score }}/9</p>
             </div>
             </li>
@@ -39,7 +54,7 @@
       </div>
 
       <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
-         <iframe width="100%" height="700" frameborder="0" src="https://ampitup.carto.com/builder/1b3e0717-d63e-4961-bbad-697203365495/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+         <iframe width="100%" height="700" frameborder="0" src="https://clausa.app.carto.com/map/6e07c8a6-e2b8-4c39-97d8-0d9a6a29350c?lat=34.118422&lng=-118.196851" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
       </div>
 
     </div>
@@ -62,7 +77,27 @@ export default {
   data() {
     return {
       cityData: citiesData,
+      searchQuery: '',
+      showDropdown: false,
     };
+  },
+  computed: {
+  filteredCities() {
+    return this.cityData
+      .filter(city =>
+        city.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+      )
+      .map(city => {
+        if (!this.searchQuery) return { ...city, highlightedName: city.name };
+
+        const regex = new RegExp(`(${this.searchQuery})`, 'gi');
+        const highlightedName = city.name.replace(
+          regex,
+          '<span class="highlight">$1</span>'
+        );
+        return { ...city, highlightedName };
+      });
+    },
   },
   methods: {
     goToCityPage(cityId) {
@@ -81,9 +116,58 @@ export default {
 li:hover {
   background-color: #f0f0f0; /* Change background color on hover */
 }
-  .score{
+.collection-item .title {
+  font-weight: 600; /* semi-bold */
+}
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 0.5rem 0.75rem;
+  margin: 0.5rem 0 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: Inter, sans-serif;
+  font-size: 0.95rem;
+}
+
+.search-box input::placeholder {
+  color: #9e9e9e;
+}
+
+.search-icon {
+  font-size: 18px;
+  color: #9e9e9e;
+}
+
+.clear-btn {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  color: #9e9e9e;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.clear-btn:hover {
+  color: #424242;
+}
+.score{
     color:black;
-  }
+}
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
 h1, h4, h2, h3{
   font-family: Anton;
 }
