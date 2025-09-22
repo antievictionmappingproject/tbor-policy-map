@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@300;400;500;700&display=swap');
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.logo-footer{
+  diplay: inline-block;
+  float:left;
+  margin-right:50px;
+  margin-bottom:20px;
+  object-fit: scale-down;
+}
+
+.collection{
+    height:calc(100vh / 2) !important;
+    overflow: auto;
+    margin-top:0;
+}
+
+.collection-header {
+    position: relative;
+    border-left:1px solid #e0e0e0;
+    border-top:1px solid #e0e0e0;
+    border-right:1px solid #e0e0e0;
+    padding-left:27px;
+}
+.collection-header h5 {
+    margin-bottom: 0;
+    padding-bottom: 12px;
+    font-weight: bold;
+    font-family: Antonio;
+}
+
+.brand-logo{
+  font-family: Anton;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+  }
+
+h1, h4, h2, h3{
+  font-family: Anton;
+}
+
+.page-footer{
+  font-family: 'Antonio', sans-serif;
+}
+
+.footer-copyright, footer li {
+  font-family: 'Inter', sans-serif;
+}
+
+main {
+  font-family: 'Anton', sans-serif;
+  flex: 1 0 auto;
+}
